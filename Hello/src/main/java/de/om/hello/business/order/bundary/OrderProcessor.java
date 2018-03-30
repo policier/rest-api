@@ -25,4 +25,14 @@ public class OrderProcessor {
 		this.payment.pay();
 		this.history.save(newOrder);
 	}
+	
+	
+	public String getHello() {
+		String name  = "Owen";
+		String name2  = "Owen";  
+		String name3  = "Owen";
+		String result = name + name2+ name3;
+		System.out.println(result);
+		return result;
+	}
 }

@@ -31,6 +31,7 @@ public class OrderProcessorTest {
 	@Test
 	public void successfulOrder() throws IllegalStateException{
 		when(this.cut.authenticator.authenticate()).thenReturn(true);
+		when(this.cut.authenticator.authenticate()).thenReturn(true);
 		String expected = "42";
 		this.cut.order(expected);  
 		verify(this.cut.payment, times(1)).pay();

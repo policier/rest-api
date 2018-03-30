@@ -85,12 +85,13 @@
 	</build>
 	<profiles>
 		<profile>
-			<id>glassfish-embedded-arquillian</id>
+			<id>run</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 
 			<build>
+				<defaultGoal>clean wildfly:run</defaultGoal>
 				<testResources>
 					<testResource>
 						<directory>src/test/resources</directory>
@@ -101,6 +102,24 @@
 						<filtering>true</filtering>
 					</testResource>
 				</testResources>
+				<plugins>
+					<plugin>
+						<groupId>org.wildfly.plugins</groupId>
+						<artifactId>wildfly-maven-plugin</artifactId>
+						<version>1.0.2.Final</version>
+						<configuration>
+							<jboss-home>C:\Users\Win7\Tools\wildfly-10.0.0.Final</jboss-home>
+							<serverName>wildfly-10.0.0.Final</serverName>  
+							<fileName>target\hello.war</fileName>
+								<jvmArgs>-Xdebug 
+										-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8787
+								</jvmArgs>
+						<!-- 	<jvmArgs>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8787</jvmArgs> -->
+							<!-- <server-config>..\..\..\..\..\jboss-runtime\configuration\standalone.xml</server-config> -->
+						</configuration>
+
+					</plugin>
+				</plugins>
 			</build>
 		</profile>
 	</profiles>
