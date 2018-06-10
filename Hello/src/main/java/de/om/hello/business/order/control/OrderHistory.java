@@ -6,11 +6,11 @@ import javax.persistence.PersistenceContext;
 import de.om.hello.business.order.entity.Order;
 
 public class OrderHistory {
-	
-	@PersistenceContext(unitName = "acaPlcTest")
-	EntityManager em;
-	
+//
+//	@PersistenceContext(unitName = "orderUnit")
+//	EntityManager em;
+//
 	public void save(Order  order){
-		em.merge(order);
+//		em.merge(order);
 	}
 }

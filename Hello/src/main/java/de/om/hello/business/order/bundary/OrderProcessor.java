@@ -28,10 +28,8 @@ public class OrderProcessor {
 	
 	
 	public String getHello() {
-		String name  = "Owen";
-		String name2  = "Owen";  
-		String name3  = "Owen";
-		String result = name + name2+ name3;
+		String name  = " hello is up";
+		String result = name;
 		System.out.println(result);
 		return result;
 	}
